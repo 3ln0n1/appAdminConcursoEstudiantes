@@ -1,0 +1,31 @@
+<div class="navbar" *ngIf="logueado|async">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link" href="/concursoestudiantes/reporte-estudiantes">Reporte de
+                Estudiantes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/concursoestudiantes/reporte-participantes">Reporte de
+                Participantes</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/concursoestudiantes/unidades-habitacionales">Unidades
+                Habitacionales
+            </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/concursoestudiantes/concursos">Concursos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/concursoestudiantes/seminarios">Eventos</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/concursoestudiantes/tipoEventos">Tipo Eventos</a>
+        </li>
+        
+        <li class="nav-item">
+            <a class="nav-link" href=""  (click)="logout()">Salir</a>
+        </li>
+    </ul>
+</div>
+
