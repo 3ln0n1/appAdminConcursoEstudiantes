@@ -27,9 +27,7 @@ mat-card{
     font-size: x-large;
     border-radius: 10px 10px 0 0;
 }
-mat-card-content{
-   
-}
+
 form{
    margin: 0px;
    padding: 0px;
@@ -88,4 +86,11 @@ table{
    height: 60px;
    color: white;
    font-size: x-large
+}
+
+.messageError{
+   width: 50%;
+   margin: auto;
+   background-color: red;
+   text-align: center;
 }

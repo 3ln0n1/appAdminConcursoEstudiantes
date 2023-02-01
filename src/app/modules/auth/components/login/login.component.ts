@@ -9,6 +9,10 @@ import { LoginService } from '../../services/login.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
+  message:string="";
+  username!: string;
+  password!:string
   constructor( private loginService:LoginService,private router:Router){}
   
   form: FormGroup = new FormGroup({
@@ -25,9 +29,19 @@ export class LoginComponent {
 
   @Output() submitEM = new EventEmitter();
 
-  login(){
-    this.loginService.show()
+  login(username:string,password:string){
+    if(username=="IN332677"){
+      if (password=="1234") {
+        this.loginService.show()
     this.router.navigate(['/concursoestudiantes/reporte-estudiantes'])
+      }else{
+        this.message="Contraseña incorrecta"
+      }
+      
+    }else{
+      this.message="Usuario incorrecto";
+    }
+    
     /*
     console.log(" iniciar");
     const user = {usuario:"IN332677" , password:"1234"};
