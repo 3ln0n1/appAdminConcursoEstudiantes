@@ -1,2 +1,57 @@
-<div class="content"><p>concursos works!</p>
+<div class="content">
+  <a href="http://localhost:4200/concursoestudiantes/home" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+
+  <div class="button">
+    <button type="button" mat-button (click)="addConcurso()" >Agregar Concurso</button>
+  </div>
+
+  <div class="table-responsive p-2">
+    <div class="table" >
+      <div class="columHeader">
+        <table>
+          <tr>
+            <th> ID Concurso </th>
+            <th> Clave </th>
+            <th> Descripcion</th>
+            <th> Año </th>
+            <th> Folio </th>
+            <th> acciones </th>
+            <th> Activo/Inactivo </th>
+
+          </tr>
+        </table>
+      </div>
+
+      <div class="rows">
+        <table>
+         
+          <tr *ngFor="let item of ELEMENT_DATA | slice:desde:hasta let i=index">
+            <td>{{item.id}}</td>
+            <td>{{item.cveConcurso}}</td>
+            <td>{{item.descripcion}}</td>
+            <td>{{item.anio}}</td>
+            <td>{{item.folio}}</td>
+            <td><img src="../../../../../assets/icono-editar.png" alt="" class="iconAcciones" (click)="editarConcurso(item.id,item.cveConcurso,item.descripcion,item.anio,item.folio)">
+              <img src="../../../../../assets/icono-reiniciar-folio.png" alt="" class="iconAcciones" (click)="resetFolio(item.id,item.cveConcurso,item.descripcion,item.anio,item.folio)">
+            </td>
+            <td><mat-checkbox [(ngModel)]="item.activo" (click)="activeInactive(item.id,item.activo)"></mat-checkbox></td>
+          </tr>
+        </table>
+    
+      </div>
+
+
+    </div>
+   <div class="paginator">
+    
+    <mat-paginator [length]="length" [pageSize]="pageSize" (page)="cambiarpagina($event)">
+      
+    </mat-paginator>
+   </div>
+     
+  </div>
+      
 </div>
+
+
+

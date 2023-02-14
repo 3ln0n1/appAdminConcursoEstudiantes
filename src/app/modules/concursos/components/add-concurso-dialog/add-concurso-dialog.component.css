@@ -1,0 +1,61 @@
+.divRow{
+    margin: 20px auto 5% auto;
+    text-align: right;
+    width: 100%;
+    }
+    .divRow >h4{
+        text-align: center;
+        color: #4C5F76;
+        font-size:x-large;
+        font-weight:bold;
+    }
+
+.divRow label{
+        float: left;
+        margin-left:40px ;
+    }
+
+input{
+    padding-left: 20px;
+    color: #646464;
+    margin-left: 50px;
+    border-radius: 30px;
+    border: 0;
+    background-color: #F1F3F5;
+    width: 47%;
+    height: 55px;
+    outline: 0;
+    margin-right: 50px;
+}
+
+.buttonGuardar{
+    text-align: center;
+}
+
+.buttonGuardar button{
+    background-color: #9E1B31;
+    border-radius: 30px;
+    width: 240px;
+    height: 60px;
+    color: white;
+    font-size: x-large;
+    border:0px;
+ }
+ .headerClose{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+ }
+ .close{
+    border-radius: 50%;
+    background-color: #9E1B31;
+    border: 0px;
+    padding: 5px 9px 5px 9px;
+    color: #FFF;
+    cursor: pointer;
+    font-size: x-large;
+    outline: none;
+ }
+
+
+ 

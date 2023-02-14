@@ -1,0 +1,59 @@
+<div class="content">
+    <div class="headerClose"><button class="close" data-dismiss="modal" type="button" (click)="closeDialog()">
+        ×
+    </button></div>
+    
+<div action="" *ngIf="data.accion=='concurso-1'">
+    <div class="divRow"><h4>Agregar Concurso</h4> </div>
+    <div class="divRow">
+        <label for="clave">Clave Concurso:*</label>
+        <input matInput [(ngModel)]="data.cveConcurso">
+    </div>
+    <div class="divRow">
+        <label for="clave">Descripción:*</label>
+        <input matInput [(ngModel)]="data.descripcion">
+    </div>
+    <div class="divRow">
+        <label for="anio">Año:*</label>
+        <input matInput [(ngModel)]="data.anio">
+    </div>
+    <div class="divRow">
+        <div class="buttonGuardar">
+            <button type="button" mat-button  (click)="addConcurso()">Agregar</button>
+        </div>
+    </div>
+</div>
+
+<div class="form" *ngIf="data.accion=='concurso-2' ||data.accion=='folio-2'">
+    <div class="divRow"><h4>{{titulo}}</h4></div>
+    <div class="divRow"><label for="">Id Concurso:*</label>
+        <input matInput [(ngModel)]="data.id" disabled/>
+    </div>
+    <div class="divRow"><label for="">Clave Concurso:*</label>
+        <input matInput [(ngModel)]="data.cveConcurso" disabled/>
+    </div>
+
+    
+    <div class="divRow"><label for="">Descripcion Concurso:*</label>
+            <input matInput [(ngModel)]="data.descripcion"/>
+    </div>
+    
+    <div class="divRow"><label for="">Año Concurso*</label>
+        <input matInput [(ngModel)]="data.anio"/>
+    </div>
+
+    <div class="divRow"><label for="">Folio*</label>
+        <input matInput [(ngModel)]="data.folio"/>    </div>
+   
+    <div class="divRow" *ngIf="data.accion=='concurso-2'">
+        <div class="buttonGuardar">
+            <button type="button" mat-button  (click)="guardarConcurso()">Guardar</button>
+        </div>
+    </div>
+    <div class="divRow" *ngIf="data.accion=='folio-2'">
+        <div class="buttonGuardar">
+            <button type="button" mat-button  (click)="resetFolio()">Reiniciar Folio</button>
+        </div>
+    </div>
+</div>
+</div>
