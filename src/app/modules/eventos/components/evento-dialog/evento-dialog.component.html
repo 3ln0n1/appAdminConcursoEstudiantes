@@ -1,0 +1,54 @@
+<div class="content">
+
+    <div *ngIf="data.accion=='evento-1'">
+        <div class="divRow"><h4>Agregar Tipo Evento</h4> </div>
+
+        <div class="divRow">
+            <label for="clave">Descripción Tipo Evento:*</label>
+            <input matInput [(ngModel)]="descripcion">
+        </div>
+       
+        <div class="divRow">
+            <div class="buttonGuardar">
+                <button type="button" mat-button  (click)="AgregarTipoEvento()">Agregar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div *ngIf="data.accion=='evento-2'">
+        <div class="divRow"><h4>Editar Tipo Evento</h4> </div>
+        <div class="divRow">
+            <label for="clave">Id Tipo Evento:*</label>
+            <input matInput [(ngModel)]="data.id">
+        </div>
+        <div class="divRow">
+            <label for="clave">Descripción Tipo Evento:*</label>
+            <input matInput [(ngModel)]="data.descripcion">
+        </div>
+       
+        <div class="divRow">
+            <div class="buttonGuardar">
+                <button type="button" mat-button  (click)="guardarEvento()">Guardar</button>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="eliminar" *ngIf="data.accion=='evento-3'">
+        <div>
+            ¿Estás seguro que deseas eliminar este Tipo de Evento?
+Tipo Evento: Seminario
+        </div>
+        <div class="divRow">
+            <div class="buttonCancelar">
+                <button type="button" mat-button (click)="cancel()" >Cancelar</button>
+            </div>
+            <div class="buttonAceptar">
+                <button type="button" mat-button (click)="eliminarTipoEvento()">Aceptar</button>
+            </div>
+        </div>
+    </div>
+
+
+    </div>

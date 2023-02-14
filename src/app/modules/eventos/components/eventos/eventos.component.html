@@ -1,2 +1,43 @@
-<div class="content"><p>tipo eventos works!</p>
+<div class="content">
+  <a href="http://localhost:4200/concursoestudiantes/home" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+
+  <div class="button">
+    <button type="button" mat-button (click)="agregarTipoEvento()" >Agregar Tipo Evento</button>
+  </div>
+
+  <div class="table-responsive p-2">
+    <div class="table" >
+      <div class="columHeader">
+        <table>
+          <tr>
+            <th>ID Tipo Evento</th>
+            <th>Descripcion</th>
+            <th>Acciones</th>
+          </tr>
+        </table>
+      </div>
+
+      <div class="rows">
+        <table>
+          <tr *ngFor="let item of ELEMENT_DATA | slice:desde:hasta let i=index">
+            <td>{{item.id}}</td>
+            <td>{{item.descripcion}}</td>
+            <td><img src="../../../../../assets/icono-editar.png" alt="" class="iconAcciones" (click)="editarEvento(item.id,item.descripcion)">
+              <img src="../../../../../assets/icono-quitar.png" alt="" class="iconAcciones" (click)="eliminarEvento(item.id)">
+            </td>
+          </tr>
+        </table>
+    
+      </div>
+
+
+    </div>
+   <div class="paginator">
+    <mat-paginator [length]="length" [pageSize]="pageSize" (page)="cambiarpagina($event)">
+    </mat-paginator>
+   </div>
+     
+  </div>
+      
 </div>
+
