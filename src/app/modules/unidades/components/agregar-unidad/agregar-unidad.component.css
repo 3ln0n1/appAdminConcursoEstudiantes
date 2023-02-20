@@ -1,0 +1,89 @@
+.form{
+    width: 60%;
+    margin: auto;
+    background-color: #FBFBFC;
+}
+.headForm{
+    border-radius: 10px 10px 0 0;
+    background-color: #9E1B31;
+    color: white;
+    font-size:x-large;
+    padding: 20px;
+}
+.divRow{
+    margin: 20px auto auto auto;
+    text-align: right;
+    width: 90%;
+    }
+.divRow label,.buttonRegresar{
+    float: left;
+}
+    .selectConcurso {
+        padding-left: 20px;
+        color: #646464;
+        margin-left: 50px;
+        border-radius: 30px;
+        border: 0;
+        background-color: #F1F3F5;
+        width: 50%;
+        height: 55px;
+        outline: 0;
+    }
+    input{
+        padding-left: 20px;
+        color: #646464;
+        margin-left: 50px;
+        border-radius: 30px;
+        border: 0;
+        background-color: #F1F3F5;
+        width: 47%;
+        height: 55px;
+        outline: 0;
+    }
+    textarea{
+        background-color: #F1F3F5;
+        border-radius: 30px;
+        border: 0;
+        width: 47%;
+        height: 150px;
+
+    }
+    .selectConcurso:focus{
+        border-radius: 30px;
+        border: 0;
+        background-color: #F1F3F5;
+        outline: 0;
+    }
+    option{
+        background-color: #F1F3F5;
+        border-color: #F1F3F5;
+        outline: none !important;
+    }
+    
+    
+
+     button{
+        background-color: #9E1B31;
+        border-radius: 30px;
+        width: 240px;
+        height: 60px;
+        color: white;
+        font-size: x-large;
+        border:0px;
+     }
+     
+     p{
+        margin:26px 0 20px 0;
+        color: #4c5f76;
+        border-bottom:solid 4px #9E1B31;
+        width: 37%;
+        padding-bottom: 20px;
+        font-size: 1.1em;
+         font-weight: 500;
+         text-align: left;
+     }
+
+     
+    
+    
+    

@@ -1,2 +1,82 @@
-<div class="content"><p>unidades-habitacionales works!</p></div>
+<div class="content">
+    <div class="sideNave">
+        <a href="http://localhost:4200/concursoestudiantes/home" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+        <div style="box-shadow: 0 0 10px #9E1B31; border-radius:10px 40px; width: 15%;padding: 10px; float: right;background-color: #9E1B31;margin-right: 20px;margin-top:5px;text-align: center;color: #fff;">
+            UNIDADES HABITACIONALES
+          </div>
+    </div>
+    <div class="divRow">
+        <div class="divColum">
+            <label for="">Concurso</label>
+            <select name="" id="" class="selectConcurso" >
+                <option value="">Seleccione un concurso</option>
+                <option *ngFor="let concurso of concursos">{{concurso.descripcion}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="divRow">
+        <div class="divColum">
+            <label for="">Estado</label>
+            <select name="" id="" class="selectConcurso">
+                <option >Estado</option>
+            </select>
+        </div>
+    </div>
+    <div class="divRow">
+        <div class="divColum">
+            <label for="">Municipio/Alcaldia</label>
+            <select name="" id="" class="selectConcurso">
+                <option >Municipio</option>
+            </select>
+        </div>
+    </div>
+    
+               
+    
+        <div class="divRow">
+            <div class="divBotonBuscar">
+                <button class="botonBuscar" type="button" mat-button  >Buscar</button>
+            </div>
+            <div class="divBotonAgregar">
+                <button class="botonAgregar" type="button" mat-button  (click)="addUnit()">Agregar</button>
+            </div>
+        </div>
+    
+
+
+    <div class="table-responsive p-2">
+        <div class="table" >
+            <div class="columHeader">
+                <table>
+                    <tr>
+                        <th>Unidad Habitacional</th>
+                        <th>Acciones</th>
+                    </tr>
+                </table>
+            </div>
+                    
+            <div class="rows">
+                <table>
+                    <tr *ngFor="let item of ELEMENT_DATA | slice:desde:hasta let i=index">
+                        <td >  </td>
+                        <td>
+                            <img src="../../../../../assets/icono-editar.png" alt="" class="iconAcciones" >
+                            <img src="../../../../../assets/icono-quitar.png" alt="" class="iconAcciones" >
+                            <img src="../../../../../assets/icono-carga.png" alt="" class="iconAcciones" >
+                                
+                        </td>
+                    </tr>
+                </table>
+                        
+            </div>
+                    
+                    
+        </div>
+                       
+        <mat-paginator [length]="length" [pageSize]="pageSize" (page)="cambiarpagina($event)">
+        </mat-paginator> 
+    </div>
+                    
+    
+</div>
 

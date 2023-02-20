@@ -1,0 +1,98 @@
+.divRow{
+    width: 70%;
+    margin: 20px auto 20px auto;
+    text-align: left;
+ }
+ .divRow label{
+    float: left;
+ }
+ .divColum{
+    text-align: right;
+    width: 70%;
+    margin: auto;
+ }
+    .selectConcurso{
+        padding-left: 20px;
+        color: #646464;
+        margin-left: 50px;
+        border-radius: 30px;
+        border: 0;
+        background-color: #F1F3F5;
+        width: 430px;
+        height: 60px;
+        outline: 0;
+    }
+    .selectConcurso:focus{
+        border-radius: 30px;
+        border: 0;
+        background-color: #F1F3F5;
+        outline: 0;
+    }
+    option{
+        background-color: #F1F3F5;
+        border-color: #F1F3F5;
+        outline: none !important;
+    }
+    
+
+     .divRow button{
+        background-color: #9E1B31;
+        border-radius: 30px;
+        width: 240px;
+        height: 60px;
+        color: white;
+        font-size: x-large;
+        border:0px;
+     }
+     .divBotonBuscar{
+        display: inline;
+        float: left;
+     }
+     .divBotonAgregar{
+        text-align: right;
+     }
+    
+
+     .table{
+        width: 70%;
+        margin: auto;
+      
+      }
+      .columHeader table{
+        width: 100%;
+        font-size:small;
+        padding: 20px 0 20px 0;
+      }
+      .rows table{
+        width: 100%;
+        font-size: small;
+      }
+      
+      .columHeader{
+        background-color: #9E1B31;
+        color: white;
+        width: auto;
+        margin: auto;
+        border-radius: 10px 10px 0 0;
+        text-align: left;
+      }
+      
+      .rows{ 
+        background-color: #F1F3F5;
+        width: auto;
+        margin: auto;
+       
+      }
+      th,td{
+        width: 35%;
+        text-align: center;
+        font-size: x-large;
+      }
+      
+      .iconAcciones{
+         height: 35px;
+         width: 35px;
+         margin-right:15px;
+      }
+    
+    

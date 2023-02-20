@@ -10,6 +10,10 @@ export const ROUTES:Routes=[
     {
         path:'unidades-habitacionales',
         component:componentsUnidades.UnidadesHabitacionalesComponent
+    },
+    {
+        path:'unidadeshabitacionales/agregarUnidad',
+        component:componentsUnidades.AgregarUnidadComponent
     }
 ];
 
