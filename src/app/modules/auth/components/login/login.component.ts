@@ -30,10 +30,11 @@ export class LoginComponent {
   @Output() submitEM = new EventEmitter();
 
   login(username:string,password:string){
+    
     if(username=="IN332677"){
       if (password=="1234") {
         this.loginService.show()
-    this.router.navigate(['/concursoestudiantes/reporte-estudiantes'])
+    this.router.navigate(['/concursoestudiantes/home'])
       }else{
         this.message="Contraseña incorrecta"
       }
@@ -45,7 +46,7 @@ export class LoginComponent {
     /*
     console.log(" iniciar");
     const user = {usuario:"IN332677" , password:"1234"};
-    this.loginService.login(user).subscribe(result=>{
+    this.loginService.login(user.usuario,user.password).subscribe(result=>{
       console.log(" iniciar"+result);
       
     });*/

@@ -1,0 +1,7 @@
+{
+    "/concursoestudiantes-web/*": {
+        "target": "https://10.85.3.21:9443",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

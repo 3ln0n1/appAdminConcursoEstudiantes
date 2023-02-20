@@ -26,6 +26,7 @@
             ],
             "styles": [
               "src/styles.css"
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css"
             ],
             "scripts": []
           },
@@ -58,6 +59,10 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "concursoestudiantes-web:build",
+            "proxyConfig": "src/proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "browserTarget": "concursoestudiantes-web:build:production"
@@ -94,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "b2f15c49-ce1c-4e1a-8fe0-3a9561568ee9"
   }
 }

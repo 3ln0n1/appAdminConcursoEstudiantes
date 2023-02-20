@@ -16,8 +16,8 @@ export class LoginService {
     this.logeado.next(false);
   }
 
-  login(user:any):Observable<any>{
-    return this.http.post("https://10.85.3.10:9443/AutenticaDev-web/api/autenticaService/login",user);
+  login(usuario:string,password:string):Observable<any>{
+    return this.http.post("https://10.85.6.28:9443/AutenticaQa-web/api/autenticaService/login?usuario="+usuario+"&password="+password,null);
   }
 
 

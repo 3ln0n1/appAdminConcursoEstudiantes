@@ -1,8 +1,172 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; color: #4c5f76;}
+
 .content{
-    min-height: 60%;
+    min-height: 54.2%;
     text-align: center;
+    height:auto;
+    margin-bottom: 60px;
 }
+.sideNave{
+    text-align: left;
+    margin-bottom: 40px;
+}
+.divContainer{
+    width: 60%;
+    margin: auto;
+    height: 350px;
+}
+
+
+
+
+
+a{
+    text-decoration: none;
+    color: black;
+}
+.redirecBack{
+    color: #9E1B31;
+    font-size: xx-large;
+    text-decoration: none;
+   }
+   .redirecBack img{
+    width: 40px;
+    height: 30px;
+   }
+
+
+
+.divDescarga{
+    display: inline;float: left;
+}
+.divDescarga a{
+    text-decoration: none;
+    color: #9E1B31;
+    font-size:larger;
+    
+}
+.iconAcciones{
+    height: 35px;
+    width: 35px;
+    margin-right:15px;
+ }
+
+/*////////////////////////*/
+/* estilos para mat-select*/
+
+.mat-mdc-select-arrow-wrapper {
+    height: 60px;
+    
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    margin-right: 20px;
+}
+.mat-mdc-select-trigger {
+    height: 100%;
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    box-sizing: border-box;
+    width: 100%;
+}
+.mat-mdc-select-value {
+    margin: 10px;
+    text-align: left;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cdk-overlay-pane{
+
+}
+
+.cdk-overlay-pane:not(.mat-mdc-select-panel-above) .mdc-menu-surface.mat-mdc-select-panel{
+border-radius: 10px;
+width:89%;
+margin: auto;
+padding: 0;
+}
+
+.mat-mdc-option {
+    background-color: #F0F2F4;
+
+}
+.mat-mdc-option:hover{
+    background-color: #D8D9DB;
+}
+/*FIN ESTILOS mat-select*/
+/*//////////////////////*/
+
+
+  /* Absolute Center Spinner */
+  .loading-indicator {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  /* Transparent Overlay */
+.loading-indicator:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(167, 162, 162, 0.3);
+  }
+
+
+  .dialogContainer{
+    margin-top: 50px;
+  }
+
+  .divButton{
+    margin: 50px;
+  }
+  .dialogButton{
+    background-color: #9E1B31;
+    border-radius: 30px;
+    width: 240px;
+    height: 60px;
+    font-size: x-large;
+    border:0px;
+    color: #ffffff;
+    cursor: pointer;
+ }
+ .divButton .btn1{
+    margin-right: 60px;
+ }
+ .divButton .btn2{
+    margin-left: 60px;
+ }
+  
+  .headerClose{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+ }
+  .close{
+    border-radius: 50%;
+    background-color: #9E1B31;
+    border: 0px;
+    padding: 5px 9px 5px 9px;
+    color: #FFF;
+    cursor: pointer;
+    font-size: x-large;
+    outline: none;
+ }
