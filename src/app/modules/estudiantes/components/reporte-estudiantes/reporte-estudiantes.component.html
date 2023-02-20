@@ -1,2 +1,102 @@
-<div class="content"><p>reporte-estudiantes works!</p>
+<div class="content">
+    <div class="sideNave">
+        <a href="http://localhost:4200/concursoestudiantes/home" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+        <div style="box-shadow: 0 0 10px #9E1B31; border-radius:10px 40px; width: 15%;padding: 10px; float: right;background-color: #9E1B31;margin-right: 20px;margin-top:5px;text-align: center;color: #fff;">
+          REPORTE DE ESTUDIANTES
+        </div>
+      </div>
+    <div class="divContainer">
+        <div class="divRow">
+            <div class="divColum">
+                <label for="">Concurso*</label>
+                <mat-select  class="select" [(value)]="selectedContest" (selectionChange)="selectionConcurso()">
+                    <mat-option *ngFor="let concurso of concursos" [value]="concurso.id">{{concurso.descripcion}}</mat-option>
+                  </mat-select>
+            </div>
+        </div>
+        <div class="divRow">
+            <div class="divColum">
+                <label for="">Año*</label>
+                <mat-select  class="select" [(value)]="selectedYear" (selectionChange)="selectionYear()">
+                    <mat-option *ngFor="let year of years" [value]="year.year">{{year.year}}</mat-option>
+                  </mat-select>
+            </div>
+        </div>
+       
+
+        <div class="divRowReporte">
+            
+            <div class="divDescarga">
+            <a (click)="exportToExcel()"><img src="../../../../../assets/icono-descarga-registros.png" alt="" class="imgRegistro" >Descargar registros</a>
+            </div>
+    
+            <div class="content-buscador">
+                    <input class="inputBuscador"  placeholder="Buscar" type="search" [(ngModel)]="txtBuscar">
+                    <button class="boton-buscador" (click)="buscar()"><mat-icon>search</mat-icon></button>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+    <div class="divTable" >
+      <table class="table" id="reporteConcursos">
+        <div class="columHeader">
+            <tr>
+              <th>Folio</th>
+              <th>Año </th>
+              <th>Fecha Creación</th>
+              <th>Curp</th>
+              <th>Nombre Estudiante </th>
+              <th>Correo Electrónico</th>
+              <th>Celular</th>
+              <th>Estado</th>
+              <th>Municipio</th>
+              <th>Calle</th>
+              <th>Número Exterior</th>
+              <th>Número Interior</th>
+              <th>Colonia</th>
+              <th>Código Postal</th>
+              <th>Nombre Universidad</th>
+              <th>Campus</th>
+              <th>Capitán</th>
+              <th>Tutor</th>
+              <th>Nombre Equipo</th>
+            </tr>
+          </div>
+          <div class="rows">
+            <tr *ngFor="let item of estudiantes">
+              <td >{{item.folio}}</td>
+              <td >{{item.anio}}</td>
+              <td >{{item.fechaCreacion}}</td>
+              <td >{{item.curp}}</td>
+              <td >{{item.nombreEstudiante}}</td>
+              <td >{{item.correoElectronico}}</td>
+              <td >{{item.celular}}</td>
+              <td >{{item.estado}}</td>
+              <td >{{item.municipio}}</td>
+              <td >{{item.calle}}</td>
+              <td >{{item.numeroExterior}}</td>
+              <td >{{item.numeroInterior}}</td>
+              <td >{{item.colonia}}</td>
+              <td >{{item.codigoPostal}}</td>
+              <td >Nombre Universidad</td>
+              <td>Campus</td>
+              <td>{{item.capitan}}</td>
+              <td>Tutor</td>
+              <td>Nombre equipo</td>
+
+
+            </tr>
+          </div>
+          </table>
+        
+    
+      </div>
+    
+  
+
 </div>
+
+
