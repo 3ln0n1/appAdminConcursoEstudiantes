@@ -1,0 +1,41 @@
+<div class="content">
+    <div class="sideNave">
+        <a href="http://localhost:4200/concursoestudiantes/seminarios" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+    </div>
+    <div class="form">
+        <div class="headForm">{{titulo}}</div>
+        <div class="divRow"><label for="">Clave Evento:*</label>
+            <input matInput [(ngModel)]="datosSeminario.cveSeminario"/>
+        </div>
+        <div class="divRow"><label for="">Descripción Evento:*</label>
+            <input matInput [(ngModel)]="datosSeminario.descripcion"/>
+        </div>
+
+        
+        <div class="divRow"><label for="">Año Evento:*</label>
+                <input matInput [(ngModel)]="datosSeminario.anio"/>
+        </div>
+        <div class="divRow"><label for="">Tipo Evento*</label>
+            <select name="" id="" class="selectConcurso">
+                <option >selecciona un tipo de evento</option>
+            </select>
+    </div>
+        <div class="divRow"><label for="">Fecha Inicio*</label>
+            <input/>
+        </div>
+
+        <div class="divRow"><label for="">Fecha Fnal*</label>
+            <input/>
+        </div>
+       
+        <div class="divRow">
+            <div class="buttonRegresar">
+                <button type="button" mat-button  >Regresar</button>
+            </div>
+            <div class="buttonGuardar">
+                <button type="button" mat-button  >Guardar</button>
+            </div>
+        </div>
+
+    </div>
+</div>

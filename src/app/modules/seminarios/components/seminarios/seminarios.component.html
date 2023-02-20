@@ -1,2 +1,54 @@
-<div class="content"><p>eventos works!</p></div>
+<div class="content">
+ 
+  <div class="sideNave">
+    <a href="http://localhost:4200/concursoestudiantes/home" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+    <div style="box-shadow: 0 0 10px #9E1B31; border-radius:10px 40px; width: 15%;padding: 10px; float: right;background-color: #9E1B31;margin-right: 20px;margin-top:5px;text-align: center;color: #fff;">
+      EVENTOS
+    </div>
+  </div>
+
+  <div class="button">
+    <button type="button" mat-button (click)="agregarSeminario()" >Agregar Evento</button>
+  </div>
+
+  <div class="divTable" >
+    <table class="table" id="reporteSeminario">
+      <div class="columHeader">
+          <tr>
+            <th>ID Evento</th>
+            <th>clave</th>
+            <th>descripcion</th>
+            <th>anio</th>
+            <th>folio</th>
+            <th>tipoEvento</th>
+            <th>fechaInicio</th>
+            <th>fechaFinal</th>
+            <th>Acciones</th>
+            <th>Activo/Inactivo</th>
+          </tr>
+        </div>
+        <div class="rows">
+          <tr *ngFor="let item of ELEMENT_DATA | slice:desde:hasta let i=index">
+            <td > {{item.id}} </td>
+            <td > {{item.cveSeminario}} </td>
+            <td > {{item.descripcion}} </td>
+            <td > {{item.anio}} </td>
+            <td > {{item.folio}} </td>
+            <td > {{item.tipoEvento}} </td>
+            <td > {{item.fechaInicio}} </td>
+            <td > {{item.fechaFinal}} </td>
+            <td><img src="../../../../../assets/icono-editar.png" matTooltip="Editar" class="iconAcciones" (click)="editarSeminario(item.id,item.descripcion)">
+              <img src="../../../../../assets/icono-carga.png" matTooltip="Agregar Formulario" class="iconAcciones" (click)="agregarFormulario(item.id)">
+            </td>
+            <td > <mat-checkbox checked="item.Activo"></mat-checkbox></td>
+
+          </tr>
+        </div>
+      </table>
+    <mat-paginator [length]="ELEMENT_DATA.length" [pageSize]="pageSize" (page)="cambiarpagina($event)">
+    </mat-paginator> 
+  </div>
+
+      
+</div>
 

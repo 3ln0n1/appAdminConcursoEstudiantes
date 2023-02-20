@@ -1,0 +1,79 @@
+.button{
+   text-align: right;
+   margin-bottom:6px;
+   width: 70%;
+   margin: auto auto 40px auto;
+}
+.button button{
+   background-color: #9E1B31;
+   border-radius: 30px;
+   width: auto;
+   height: auto;
+   color: white;
+   font-size:smaller;
+   border:0px;
+   padding: 15px;
+}
+.table{
+  width: 70%;
+  margin: auto;
+
+}
+.columHeader table{
+  width: 100%;
+  font-size:small;
+  padding: 20px 0 20px 0;
+}
+.rows table{
+  width: 100%;
+  font-size: small;
+}
+
+.columHeader{
+  background-color: #9E1B31;
+  color: white;
+  width: auto;
+  margin: auto;
+  border-radius: 10px 10px 0 0;
+  text-align: left;
+}
+
+.rows{ 
+  background-color: #F1F3F5;
+  width: auto;
+  margin: auto;
+ 
+}
+th,td{
+  width: 10%;
+  text-align: center;
+}
+
+.iconAcciones{
+   height: 35px;
+   width: 35px;
+   margin-right:15px;
+}
+
+
+::ng-deep .mat-mdc-paginator-page-size {
+  visibility:hidden;
+ }
+ 
+ ::ng-deep .mat-mdc-checkbox.mat-accent {
+   --mdc-checkbox-selected-checkmark-color: #fff;
+   --mdc-checkbox-selected-focus-icon-color: #9E1B31;
+   --mdc-checkbox-selected-hover-icon-color: #9E1B31;
+   --mdc-checkbox-selected-icon-color: #9E1B31;
+   --mdc-checkbox-selected-pressed-icon-color: #9E1B31;
+   --mdc-checkbox-unselected-focus-icon-color: #212121;
+   --mdc-checkbox-unselected-hover-icon-color: #212121;
+   --mdc-checkbox-disabled-selected-icon-color: rgba(0, 0, 0, 0.38);
+   --mdc-checkbox-disabled-unselected-icon-color: rgba(0, 0, 0, 0.38);
+   --mdc-checkbox-unselected-icon-color: rgba(0, 0, 0, 0.54);
+   --mdc-checkbox-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+ }
+
+ ::ng-deep .mat-tooltip {
+  background-color:#9E1B31;
+}
