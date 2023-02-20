@@ -41,21 +41,8 @@ input{
     font-size: x-large;
     border:0px;
  }
- .headerClose{
-    position: absolute;
-    right: 10px;
-    top: 10px;
- }
- .close{
-    border-radius: 50%;
-    background-color: #9E1B31;
-    border: 0px;
-    padding: 5px 9px 5px 9px;
-    color: #FFF;
-    cursor: pointer;
-    font-size: x-large;
-    outline: none;
- }
+ 
+ 
 
 
  

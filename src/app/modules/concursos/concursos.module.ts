@@ -9,6 +9,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 
 import * as componentsConcursos from './components';
 import { FormsModule } from '@angular/forms';
+import { MatTooltipModule } from '@angular/material/tooltip';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
         MatTableModule,
         MatPaginatorModule,
         MatCheckboxModule,
-        FormsModule
+        FormsModule,
+        MatTooltipModule
         
         
     ],

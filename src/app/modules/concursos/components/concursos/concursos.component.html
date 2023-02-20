@@ -1,6 +1,13 @@
 <div class="content">
-  <a href="http://localhost:4200/concursoestudiantes/home" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
 
+  <div class="sideNave">
+    <a href="http://localhost:4200/concursoestudiantes/home" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+    <div style="box-shadow: 0 0 10px #9E1B31; border-radius:10px 40px; width: 15%;padding: 10px; float: right;background-color: #9E1B31;margin-right: 20px;margin-top:5px;text-align: center;color: #fff;">
+      CONCURSOS
+    </div>
+  </div>
+
+  <div >
   <div class="button">
     <button type="button" mat-button (click)="addConcurso()" >Agregar Concurso</button>
   </div>
@@ -31,8 +38,8 @@
             <td>{{item.descripcion}}</td>
             <td>{{item.anio}}</td>
             <td>{{item.folio}}</td>
-            <td><img src="../../../../../assets/icono-editar.png" alt="" class="iconAcciones" (click)="editarConcurso(item.id,item.cveConcurso,item.descripcion,item.anio,item.folio)">
-              <img src="../../../../../assets/icono-reiniciar-folio.png" alt="" class="iconAcciones" (click)="resetFolio(item.id,item.cveConcurso,item.descripcion,item.anio,item.folio)">
+            <td><img src="../../../../../assets/icono-editar.png" matTooltip="Editar"  class="iconAcciones" (click)="editarConcurso(item.id,item.cveConcurso,item.descripcion,item.anio,item.folio)">
+              <img src="../../../../../assets/icono-reiniciar-folio.png" matTooltip="Resetear Folio" class="iconAcciones" (click)="resetFolio(item.id,item.cveConcurso,item.descripcion,item.anio,item.folio)">
             </td>
             <td><mat-checkbox [(ngModel)]="item.activo" (click)="activeInactive(item.id,item.activo)"></mat-checkbox></td>
           </tr>
@@ -50,7 +57,7 @@
    </div>
      
   </div>
-      
+</div>  
 </div>
 
 

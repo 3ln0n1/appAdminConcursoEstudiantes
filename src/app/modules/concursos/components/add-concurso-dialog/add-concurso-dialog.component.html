@@ -3,7 +3,7 @@
         ×
     </button></div>
     
-<div action="" *ngIf="data.accion=='concurso-1'">
+<div class="dialogContainer" *ngIf="data.accion=='concurso-1'">
     <div class="divRow"><h4>Agregar Concurso</h4> </div>
     <div class="divRow">
         <label for="clave">Clave Concurso:*</label>
@@ -24,7 +24,7 @@
     </div>
 </div>
 
-<div class="form" *ngIf="data.accion=='concurso-2' ||data.accion=='folio-2'">
+<div class="dialogContainer" *ngIf="data.accion=='concurso-2' ||data.accion=='folio-2'">
     <div class="divRow"><h4>{{titulo}}</h4></div>
     <div class="divRow"><label for="">Id Concurso:*</label>
         <input matInput [(ngModel)]="data.id" disabled/>
