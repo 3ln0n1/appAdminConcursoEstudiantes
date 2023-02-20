@@ -5,6 +5,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { MatIconModule } from '@angular/material/icon';
+import { SpinnerModule } from '../loader/spinner.module';
 
 import * as componentsEventos from './components';
 
@@ -15,7 +16,8 @@ import * as componentsEventos from './components';
         MatTableModule,
         MatPaginatorModule,
         MatCheckboxModule,
-        MatIconModule
+        MatIconModule,
+        SpinnerModule
     ],
     providers: [],
     declarations: [...componentsEventos.components],

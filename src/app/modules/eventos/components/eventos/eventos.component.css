@@ -1,10 +1,9 @@
-  .button{
+  .divButton{
     text-align: right;
     margin-bottom:6px;
-    width: 60%;
-    margin: auto auto 40px auto;
  }
- .button button{
+
+ .divButton .button{
     background-color: #9E1B31;
     border-radius: 30px;
     width: auto;
@@ -14,29 +13,25 @@
     border:0px;
     padding: 15px;
  }
- 
- .table{
-   width: 60%;
-   margin: auto;
 
+ .tableContainer{
  }
- .columHeader table{
-   width: 100%;
-   font-size: large;
-   padding: 20px 0 20px 0;
- }
- .rows table{
-   width: 100%;
-   font-size: large;
+
+ .table{
+  width: 100%;
+   margin: auto;
+   border-collapse: collapse;
  }
  
  .columHeader{
    background-color: #9E1B31;
    color: white;
    width: auto;
+   height: 40px;
    margin: auto;
    border-radius: 10px 10px 0 0;
    text-align: left;
+   padding-top: 10px;
  }
 
  .rows{ 
@@ -45,17 +40,16 @@
    margin: auto;
   
  }
+
  th,td{
-   width: 33%;
+   width: 302px;
    text-align: center;
+   vertical-align:middle;
  }
-
- .iconAcciones{
-    height: 35px;
-    width: 35px;
-    margin-right:15px;
+ 
+ .rows tr:nth-child(odd){
+  background-color: #D0D0CF;
  }
-
 
  .paginator{
   width: 60%;
@@ -63,3 +57,6 @@
   text-align: center;
  }
  
+ ::ng-deep .mat-tooltip {
+  background-color: #9E1B31;
+}

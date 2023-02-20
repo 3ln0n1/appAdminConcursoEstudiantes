@@ -18,8 +18,7 @@ constructor(private eventosService:EventosService,public dialogRef: MatDialogRef
     console.log(this.data.id)
   }
 
-
-  cancel(): void {
+  closeDialog(): void {
     console.log("operacion cancelada");
     this.dialogRef.close(1);// 1 => Valor que indica que se cancelo la operacion
   }
@@ -36,11 +35,12 @@ constructor(private eventosService:EventosService,public dialogRef: MatDialogRef
   }
 
   guardarEvento():void{
+    this.dialogRef.close(0);
     let datos={
       "descripcion":this.data.descripcion
     };
     this.eventosService.updateTipoEvento(this.data.id, datos).subscribe(result=>{
-      this.dialogRef.close(0);
+      
     },error=>{
       console.log(error);
     });

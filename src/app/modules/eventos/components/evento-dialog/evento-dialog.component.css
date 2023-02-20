@@ -28,35 +28,10 @@ input{
     margin-right: 50px;
 }
 
-.buttonGuardar, .buttonCancelar, .buttonAceptar{
-    text-align: center;
-    display: inline;
+.divAviso p{
+    color: #4c5f76;
+    font-size:2em;
+    font-family:sans-serif;
+   
+
 }
-.buttonGuardar button{
-    background-color: #9E1B31;
-    border-radius: 30px;
-    width: 240px;
-    height: 60px;
-    color: white;
-    font-size: x-large;
-    border:0px;
- }
- .buttonCancelar button{
-    background-color: #9E1B31;
-    border-radius: 30px;
-    width: 240px;
-    height: 60px;
-    color: white;
-    font-size: x-large;
-    border:0px;
- }
- .buttonAceptar button{
-    background-color: #9E1B31;
-    border-radius: 30px;
-    width: 240px;
-    height: 60px;
-    color: white;
-    font-size: x-large;
-    border:0px;
- }
- 

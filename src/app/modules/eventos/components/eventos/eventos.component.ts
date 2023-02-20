@@ -14,6 +14,7 @@ import { EventosService } from '../../services/eventos.service';
   styleUrls: ['./eventos.component.css']
 })
 export class EventosComponent implements OnInit {
+  showSpinner:boolean= false;
   ELEMENT_DATA!: Eventos[];
   pageSize = 3;
   i:number = 1;
@@ -26,15 +27,19 @@ export class EventosComponent implements OnInit {
   ngOnInit(): void {
     this.loginService.show()
     this.getTipoEvento();
+    
   }
 
   getTipoEvento(){
+    this.showSpinner=true
     this.eventosService.getTipoEventos().subscribe(result=>{
       this.ELEMENT_DATA=result.resultados
       console.log(this.ELEMENT_DATA);
       this.length=this.ELEMENT_DATA.length
+      //this.showSpinner=false
     },error=>{
       this.ELEMENT_DATA=[{id:0,descripcion:"noData",acciones:"noData",accion:"noAction"}];
+      //this.showSpinner=false
     });
   }
 
@@ -65,6 +70,9 @@ export class EventosComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
+      if (result==1) {
+        
+      }
       this.getTipoEvento();
       console.log('The dialog was closed');
       
