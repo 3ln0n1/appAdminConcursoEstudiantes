@@ -1,2 +1,73 @@
-<div class="content"><p>reporte-participantes works!</p></div>
+<div class="content">
+
+  <div class="sideNave">
+    <a href="http://localhost:4200/concursoestudiantes/home" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+    <div style="box-shadow: 0 0 10px #9E1B31; border-radius:10px 40px; width: 15%;padding: 10px; float: right;background-color: #9E1B31;margin-right: 20px;margin-top:5px;text-align: center;color: #fff;">
+      REPORTE DE PARTICIPANTES
+    </div>
+  </div>
+
+    <div class="divContainer">
+        <div class="divRow">
+            <div class="divColum">
+                <label for="">Seminario*</label>
+                <mat-select  class="select" [(value)]="encuestaSeleccionada" (selectionChange)="selection(encuestaSeleccionada)">
+                  <mat-option *ngFor="let seminario of seminarios" [value]="seminario.id">{{seminario.descripcion}}</mat-option>
+                </mat-select>
+            </div>
+        </div>
+
+        <div class="divRowReporte">
+            
+            <div class="divDescarga">
+            <a (click)="exportToExcel()"><img src="../../../../../assets/icono-descarga-registros.png" alt="" class="imgRegistro" >Descargar registros</a>
+            </div>
+    
+            <div class="content-buscador">
+                    <input class="inputBuscador"  placeholder="Buscar" type="search" [(ngModel)]="txtBuscar">
+                    <button class="boton-buscador" (click)="buscar()"><mat-icon>search</mat-icon></button>
+            </div>
+            
+        </div>
+
+    </div>
+
+
+    <div class="divTable" >
+      <table class="table" id="reporteSeminario">
+        <div class="columHeader">
+          
+            <tr>
+              <th>Folio</th>
+              <th>Fecha Creación</th>
+              <th>Nombre Estudiante </th>
+              <th>Correo Electrónico</th>
+              <th>Género</th>
+              <th>Nacionalidad</th>
+              <th>Formación Académica</th>
+              <th>Profesión</th>
+              <th>Afiliación Académica</th>
+            </tr>
+          </div>
+          <div class="rows">
+          <tr *ngFor="let item of participantesSeminario">
+            <td>{{item.folio}}</td>
+            <td>{{item.fechaCreacion}}</td>
+            <td>{{item.nombre}}</td>
+            <td>{{item.correoElectronico}}</td>
+            <td>{{item.idGenero.nombreGenero}}</td>
+            <td>{{item.nacionalidad}}</td>
+            <td>{{item.idFormacion.nombreFormacion}}</td>
+            <td>{{item.profesion}}</td>
+            <td>{{item.afiliacionAcademica}}</td>
+           </tr>
+          </div>
+          </table>
+        
+
+
+    
+      </div>
+    
+</div>
 

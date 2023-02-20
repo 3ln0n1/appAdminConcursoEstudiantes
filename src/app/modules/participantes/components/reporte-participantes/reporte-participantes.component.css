@@ -1,0 +1,120 @@
+
+.divRow{
+margin-bottom: 20px;
+
+}
+.divColum label{
+float: left;
+}
+.divColum{
+    text-align: right;
+    width: 70%;
+    margin: auto;
+}
+
+.divRowReporte{
+    margin-top: 50px;
+}
+.divDescarga{
+    display: inline;
+    float: left;
+}
+
+.select{
+    
+    color: #646464;
+    margin-left: 50px;
+    border-radius: 30px;
+    border: 0;
+    background-color: #F1F3F5;
+    width: 450px;
+    height: 60px;
+    outline: 0;
+}
+.select:focus{
+    border-radius: 30px;
+    border: 0;
+    background-color: #F1F3F5;
+    outline: 0;
+}
+
+
+
+.content-buscador{
+    width: 60%;
+    float: right;
+    text-align: right;
+    margin-bottom: 50px;
+    
+}
+.inputBuscador{
+    border: solid 1px #D0D0D0;
+    border-radius: 30px 0px 0px 30px;
+    background-color: #F0F2F4;
+    width:85%;
+    height: 60px;
+    padding-left: 5px;
+    outline: 1px #D0D0D0 !important;
+    float: left;
+    
+}
+.inputBuscador:focu{
+    border: 0px;
+    outline: 1px #D0D0D0 !important;
+}
+.boton-buscador{
+    background-color: #F0F2F4;
+    cursor: pointer;
+    border: solid 1px #D0D0D0;
+    border-radius: 0px 30px 30px 0px  ;
+    height: 60px;
+    width: 15%;
+}
+
+
+.imgRegistro{
+    width: auto;
+    height: 60px;
+    margin-right: 8px;
+  
+}
+
+
+.divTable{
+    width: 95%;
+    margin: auto;
+  }
+  .table{
+    width: 100%;
+    margin: auto;
+  }
+  
+  .columHeader{
+    background-color: #9E1B31;
+    color: white;
+    width: auto;
+    margin: auto;
+    border-radius: 10px 10px 0 0;
+    
+  }
+  .rows {
+    width: auto;
+    margin: auto;
+    border: solid 1px #D0D0D0;
+  }
+  th,td{
+    width: 11.25%;
+    text-align: center;
+  }
+  td{
+    
+    word-break:break-all;
+  }
+
+  .mat-mdc-option {
+    background-color: #F0F2F4;
+
+}
+.mat-mdc-option:hover{
+    background-color: #D8D9DB;
+}
