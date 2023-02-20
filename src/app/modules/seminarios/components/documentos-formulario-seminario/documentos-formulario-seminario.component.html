@@ -1,0 +1,68 @@
+<div class="content">
+  <div class="sideNave">
+    <a href="http://localhost:4200/concursoestudiantes/seminarios" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+    <div style="box-shadow: 0 0 10px #9E1B31; border-radius:10px 40px; width: 15%;padding: 10px; float: right;background-color: #9E1B31;margin-right: 20px;margin-top:5px;text-align: center;color: #fff;">
+      EVENTOS
+    </div>
+  </div>
+  <div class="groupDiv">
+    <div class="columDiv">
+      <span>Id Seminario:</span>
+      <span>Clave Seminario:</span>
+      <span>Descripcion:</span>
+    </div>
+    <div class="columDiv">
+      <span>1</span>
+      <span>SEI</span>
+      <span>Seminario Autoria</span>
+    </div>
+  </div>
+
+    <div class="button">
+        <button type="button" mat-button>Agregar Formulario</button>
+      </div>
+
+      <div class="divTable" >
+        <table class="table" id="reporteSeminario">
+          <div class="columHeader">
+              <tr>
+                <th>ID Formulario</th>
+                <th>Titulo</th>
+                <th>Descripcion</th>
+                <th>Tema</th>
+                <th>Fecha Evento</th>
+                <th>Fecha de Creacion</th>
+                <th>acciones</th>
+                <th>botonRegistro</th>
+                <th>estado</th>
+              </tr>
+            </div>
+            <div class="rows">
+              <tr *ngFor="let item of ELEMENT_DATA | slice:desde:hasta let i=index">
+                <td >{{item.idSeminario.id}}</td>
+                <td > {{item.titulo}}</td>
+                <td > {{item.descripcion}}</td>
+                <td > {{item.tema}}</td>
+                <td >{{item.fecha}}</td>
+                <td > {{item.fechaCreacion}}</td>
+                <td><img src="../../../../../assets/icono-editar.png" alt="" class="iconAcciones" >
+                  <img src="../../../../../assets/icono-carga.png" alt="" class="iconAcciones" >
+                </td>
+                <td > <mat-checkbox checked=""></mat-checkbox></td>
+                <td > {{item.estado}}</td>
+              </tr>
+            </div>
+          </table>
+        <mat-paginator [length]="ELEMENT_DATA.length" [pageSize]="pageSize" (page)="cambiarpagina($event)">
+        </mat-paginator> 
+      </div>
+
+
+
+
+
+    
+
+      
+</div>
+

@@ -1,0 +1,72 @@
+::ng-deep .mat-elevation-z8 {
+    width: 60%;
+    margin: auto;
+    border-radius: 10px;
+    padding-top: 10px;
+    background-color: #9E1B31;
+    margin-top: 20px;
+  }
+  .groupDiv{
+   width: 60%;
+   margin: auto;
+  }
+  .columDiv{
+   float: left;
+   width: 50%;
+   text-align: left;
+   display: inline;
+  }
+  span{
+   display: block;
+  }
+  .button{
+    text-align: right;
+    margin-bottom:6px;
+    width: 60%;
+    margin: auto;
+ }
+ 
+ .button button{
+    background-color: #9E1B31;
+    border-radius: 30px;
+    width: auto;
+    height: auto;
+    color: white;
+    font-size:smaller;
+    border:0px;
+    padding: 15px;
+ }
+ 
+ 
+ .divTable{
+   width: 95%;
+   margin: auto;
+ }
+ .table{
+   width: 100%;
+   margin: auto;
+ }
+ 
+ .columHeader{
+   background-color: #9E1B31;
+   color: white;
+   width: auto;
+   margin: auto;
+   border-radius: 10px 10px 0 0;
+   
+ }
+ .rows {
+   width: auto;
+   margin: auto;
+   border: solid 1px #D0D0D0;
+ }
+ 
+ th,td{
+    width: 155px;
+   text-align: center;
+ }
+ td{
+   word-break:break-all;
+ }
+
+ 
