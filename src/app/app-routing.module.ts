@@ -12,6 +12,12 @@ const routes: Routes = [
     loadChildren: () =>
         import('./modules/auth/auth-routing.module').then(m => m.AuthRoutingModule),
 },
+
+  {
+    path: 'concursoestudiantes',
+    loadChildren: () =>
+        import('./modules/dashboard/navbar-routing.module').then(m => m.NavbarRoutingModule),
+},
 {
   path: 'concursoestudiantes',
   loadChildren: () =>
