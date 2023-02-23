@@ -91,6 +91,6 @@ table{
 .messageError{
    width: 50%;
    margin: auto;
-   background-color: red;
+   color: red;
    text-align: center;
 }

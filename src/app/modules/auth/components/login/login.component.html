@@ -19,15 +19,13 @@
           <div><input type="password" formControlName="password" [(ngModel)]="password" name="password"></div>
         </div>
        
-
-        <br>
       <div class="contentMessage">
         <div *ngIf="message!=''" class="messageError">
           {{ message }}
         </div>
       </div>
       
-
+      <br>
       <div class="button">
         <button type="button" mat-button  (click)="login(username,password)">Acceder</button>
 
