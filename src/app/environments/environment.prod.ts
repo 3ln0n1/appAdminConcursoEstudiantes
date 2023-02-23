@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
 
   apiURL:'https://10.85.3.21:9443/concursoestudiantes-web/api',
   URL_HOME: 'http://localhost:58953',
