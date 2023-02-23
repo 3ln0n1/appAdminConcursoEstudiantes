@@ -33,12 +33,11 @@ export class SeminariosComponent implements OnInit {
   }
   
 getSeminarios():void{
-  
   this.seminarioService.getSeminarios().subscribe(result=>{
     this.seminarios=result.resultados
     this.ELEMENT_DATA=result.resultados;
     this.totalSeminarios=this.ELEMENT_DATA.length
-    console.log(this.ELEMENT_DATA);
+    console.log('lista de seminarios');
   },error=>{
     this.ELEMENT_DATA=[{id:0,descripcion: 'noData', cveSeminario:'noData',activo:false,fechaCreacion:"",anio:0,folio:0,version:0,fechaInicio:'noData',fechaFinal:'noData',idTipoEvento:{id:0,descripcion:'noData'},acciones:'noData',accion:"noData"}];
   });
@@ -62,17 +61,17 @@ getSeminarios():void{
     delete filtro[0].links
     delete filtro[0].idTipoEvento.links
     let fecha=new Date(filtro[0].fechaCreacion).toISOString().substr(0, 19);
-    console.log(fecha)
     filtro[0].fechaCreacion=datepipe.transform(filtro[0].fechaCreacion, 'yyyy-MM-dd hh:mm:ss')?.substring(0,16);
-    console.log(filtro[0].fechaCreacion)
    if (!checked) {
       this.seminarioService.updateSeminario(idEvento,filtro[0]).subscribe(result=>{
+        console.log('se desactivo seminario')
         this.getSeminarios();
       },error=>{
         console.log(error);
       });
      }else{
        this.seminarioService.updateSeminario(idEvento,filtro[0]).subscribe(result=>{
+        console.log('se activo seminario')
          this.getSeminarios();
       },error=>{
         console.log(error);

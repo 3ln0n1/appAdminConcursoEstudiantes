@@ -27,9 +27,12 @@ export class AgregarSeminarioComponent implements OnInit {
   constructor(private spinnerService:SpinnerService ,private eventosService:EventosService,private seminarioService:SeminarioService, private activeRouter:ActivatedRoute,private router:Router){}
 
   ngOnInit(): void {
-    
     this.idSeminario=""+this.activeRouter.snapshot.paramMap.get('id');
-    
+    this.getSeminarioByidSeminario();
+    this.getTipoEvento();
+  }
+
+  getSeminarioByidSeminario():void{
     if (this.idSeminario!="" && this.idSeminario!=undefined && this.idSeminario!="null") {
       this.titulo="Editar Evento";
       this.seminarioService.getSeminarioByidSeminario(this.idSeminario).subscribe(result=>{
@@ -38,26 +41,16 @@ export class AgregarSeminarioComponent implements OnInit {
         this.datosSeminario=result;
         this.descripcionTipoEvento=[this.datosSeminario.idTipoEvento]
         this.tipoEventoSeleccionado=this.datosSeminario.idTipoEvento.id
-        console.log(this.descripcionTipoEvento)
       });
     }else{
       this.titulo="Agregar Evento";
     }
-   
-    this.getTipoEvento();
   }
 
-  getSeminarios(){
-    this.seminarioService.getSeminarios().subscribe(result=>{
-      console.log(result.resultados)
-      this.seminarios=result.resultados
-    },error=>{  
-      console.log(error);
-    });
 
-  }
   getTipoEvento(){
     this.eventosService.getTipoEventos().subscribe(result=>{
+      console.log('Se obtione lista de tipo eventos');
       this.eventos=result.resultados
     },error=>{  
       console.log(error);
@@ -67,12 +60,9 @@ export class AgregarSeminarioComponent implements OnInit {
 
   selection(id:number){
     this.descripcionTipoEvento=this.eventos.filter(result=>result.id==id)
-    console.log(this.descripcionTipoEvento);
-    
   }
 
   editarSeminario(){
-    console.log(this.descripcionTipoEvento.id)
     if (this.idSeminario!="" && this.idSeminario!=undefined && this.idSeminario!="null") {
       this.dataSeminario={
         id:this.datosSeminario.id,
@@ -89,14 +79,15 @@ export class AgregarSeminarioComponent implements OnInit {
           acciones:'',
           accion:''
       }
-      delete this.dataSeminario.id
+        delete this.dataSeminario.id
         delete this.dataSeminario.accion
         delete this.dataSeminario.acciones
-        
-      console.log(this.dataSeminario)
-      this.seminarioService.updateSeminario(parseInt(this.idSeminario),this.dataSeminario).subscribe(result=>{
-        this.router.navigate(['/concursoestudiantes/seminarios'])
-
+        this.seminarioService.updateSeminario(parseInt(this.idSeminario),this.dataSeminario).subscribe(result=>{
+          console.log(this.dataSeminario)
+          this.router.navigate(['/concursoestudiantes/seminarios'])
+      },error=>{
+        console.log(error);
+        alert('Error al intentar actualizar');
       });
     }else{
 
@@ -116,13 +107,14 @@ export class AgregarSeminarioComponent implements OnInit {
           acciones:'',
           accion:''
       }
-      delete this.dataSeminario.id
+        delete this.dataSeminario.id
         delete this.dataSeminario.accion
         delete this.dataSeminario.acciones
         
-      console.log(this.dataSeminario)
       this.seminarioService.addSeminario(this.dataSeminario).subscribe(result=>{
         console.log("se agrego seminario")
+      },error=>{
+        console.log(error)
       });
       
     }
