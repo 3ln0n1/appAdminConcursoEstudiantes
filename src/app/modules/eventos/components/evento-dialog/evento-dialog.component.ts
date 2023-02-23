@@ -19,8 +19,8 @@ constructor(private eventosService:EventosService,public dialogRef: MatDialogRef
   }
 
   closeDialog(): void {
-    console.log("operacion cancelada");
     this.dialogRef.close(1);// 1 => Valor que indica que se cancelo la operacion
+    console.log("operacion cancelada");
   }
 
   AgregarTipoEvento():void{
@@ -28,6 +28,7 @@ constructor(private eventosService:EventosService,public dialogRef: MatDialogRef
       "descripcion":this.descripcion
       }
     this.eventosService.addTipoEvento(descrip).subscribe(result=>{
+      console.log("Se guardo correctamente");
       this.dialogRef.close(0);
     },error=>{
       console.log(error);
@@ -35,22 +36,25 @@ constructor(private eventosService:EventosService,public dialogRef: MatDialogRef
   }
 
   guardarEvento():void{
-    this.dialogRef.close(0);
     let datos={
       "descripcion":this.data.descripcion
     };
     this.eventosService.updateTipoEvento(this.data.id, datos).subscribe(result=>{
-      
+      console.log("se modifico correctamente")
+      this.dialogRef.close(0);
     },error=>{
       console.log(error);
+      alert("Error al intentar guardar los cambios");
     });
   }
 
   eliminarTipoEvento():void{
     this.eventosService.deleteTipoEvento(this.data.id).subscribe(result=>{
+      console.log("se elimino correctamente")
       this.dialogRef.close(0);
     },error=>{
       console.log(error);
+      alert("Error al intentar eliminar");
     });
   }
 

@@ -62,8 +62,6 @@
 }
 
 ::ng-deep .mat-mdc-icon-button[disabled] .mat-mdc-paginator-icon {
-  fill: #9E1B31;
-  width: 40px;
   height: auto;
 }
 ::ng-deep .mat-mdc-paginator-page-size {
