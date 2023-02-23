@@ -29,7 +29,6 @@ export class ReporteParticipantesComponent implements OnInit{
   getSeminarios(){
     this.seminarioService.getSeminarios().subscribe(result=>{
       this.seminarios=result.resultados
-      
     },error=>{  
       console.log(error);
     });

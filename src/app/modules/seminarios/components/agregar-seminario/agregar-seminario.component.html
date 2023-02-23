@@ -1,8 +1,9 @@
+<app-spinner></app-spinner>
 <div class="content">
     <div class="sideNave">
         <a routerLink="/concursoestudiantes/seminarios" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
     </div>
-    <div class="form">
+    <div class="form" *ngIf="this.idSeminario!='' && this.idSeminario!=undefined && this.idSeminario!='null'">
         <div class="headForm">{{titulo}}</div>
         <div class="divRow"><label for="">Clave Evento:*</label>
             <input matInput [(ngModel)]="datosSeminario.cveSeminario"/>
@@ -15,10 +16,11 @@
         <div class="divRow"><label for="">Año Evento:*</label>
                 <input matInput [(ngModel)]="datosSeminario.anio"/>
         </div>
-        <div class="divRow"><label for="">Tipo Evento*</label>
-            <select name="" id="" class="selectConcurso">
-                <option >selecciona un tipo de evento</option>
-            </select>
+        <div class="divRow">
+            <label for="">Seminario*</label>
+                <mat-select  class="select" [(value)]="tipoEventoSeleccionado" (selectionChange)="selection(tipoEventoSeleccionado)">
+                  <mat-option *ngFor="let seminario of eventos" [value]="seminario.id">{{seminario.descripcion}}</mat-option>
+                </mat-select>
     </div>
         <div class="divRow"><label for="">Fecha Inicio*</label>
             <input matInput [(ngModel)]="datosSeminario.fechaInicio"/>
@@ -30,7 +32,44 @@
        
         <div class="divRow">
             <div class="buttonRegresar">
-                <button type="button" mat-button  >Regresar</button>
+                <button type="button" mat-button  routerLink="/concursoestudiantes/seminarios">Regresar</button>
+            </div>
+            <div class="buttonGuardar">
+                <button type="button" mat-button  (click)="editarSeminario()">Guardar</button>
+            </div>
+        </div>
+
+    </div>
+    <div class="form" *ngIf="this.idSeminario=='' || this.idSeminario==undefined || this.idSeminario=='null'">
+        <div class="headForm">{{titulo}}</div>
+        <div class="divRow"><label for="">Clave Evento:*</label>
+            <input matInput [(ngModel)]="datos.cveSeminario"/>
+        </div>
+        <div class="divRow"><label for="">Descripción Evento:*</label>
+            <input matInput [(ngModel)]="datos.descripcion"/>
+        </div>
+
+        
+        <div class="divRow"><label for="">Año Evento:*</label>
+                <input matInput [(ngModel)]="datos.anio"/>
+        </div>
+        <div class="divRow">
+            <label for="">Seminario*</label>
+                <mat-select  class="select" [(value)]="tipoEventoSeleccionado" (selectionChange)="selection(tipoEventoSeleccionado)">
+                  <mat-option *ngFor="let seminario of eventos" [value]="seminario.id">{{seminario.descripcion}}</mat-option>
+                </mat-select>
+    </div>
+        <div class="divRow"><label for="">Fecha Inicio*</label>
+            <input matInput [(ngModel)]="datos.fechaInicio"/>
+        </div>
+
+        <div class="divRow"><label for="">Fecha Fnal*</label>
+            <input matInput [(ngModel)]="datos.fechaFinal"/>
+        </div>
+       
+        <div class="divRow">
+            <div class="buttonRegresar">
+                <button type="button" mat-button  routerLink="/concursoestudiantes/seminarios">Regresar</button>
             </div>
             <div class="buttonGuardar">
                 <button type="button" mat-button  (click)="editarSeminario()">Guardar</button>

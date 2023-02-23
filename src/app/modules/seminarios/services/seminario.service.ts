@@ -40,4 +40,8 @@ export class SeminarioService {
     let url = environment.apiURL+environment.URL_SEMINARIO+"/"+id;
      return this.http.put(url, descripcion);
     }
+    addSeminario(descripcion:any):Observable<any> {
+      let url = environment.apiURL+environment.URL_SEMINARIO;
+       return this.http.post(url, descripcion);
+      }
 }

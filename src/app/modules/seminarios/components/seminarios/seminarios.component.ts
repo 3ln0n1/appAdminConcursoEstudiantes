@@ -5,8 +5,9 @@ import { MatTableDataSource } from '@angular/material/table';
 import { LoginService } from 'src/app/modules/auth/services/login.service';
 import { SeminarioDialogComponent } from '../seminario-dialog/seminario-dialog.component';
 import { SeminarioService } from '../../services/seminario.service';
-import { Seminario } from '../../models/seminarioDTO';
+import { Seminario, Seminario2 } from '../../models/seminarioDTO';
 import { Router } from '@angular/router';
+import { DatePipe } from '@angular/common';
 
 @Component({
   selector: 'app-seminarios',
@@ -15,10 +16,12 @@ import { Router } from '@angular/router';
 })
 export class SeminariosComponent implements OnInit {
   ELEMENT_DATA!: Seminario[];
+  seminarios!: Seminario2[];
   pageSize = 5;
   i:number = 1;
   desde:number =0;
   hasta:number =5;
+  totalSeminarios:number=0;
 
   constructor(private router:Router,private seminarioService:SeminarioService,private loginService:LoginService,public dialog: MatDialog){
 
@@ -30,8 +33,11 @@ export class SeminariosComponent implements OnInit {
   }
   
 getSeminarios():void{
+  
   this.seminarioService.getSeminarios().subscribe(result=>{
+    this.seminarios=result.resultados
     this.ELEMENT_DATA=result.resultados;
+    this.totalSeminarios=this.ELEMENT_DATA.length
     console.log(this.ELEMENT_DATA);
   },error=>{
     this.ELEMENT_DATA=[{id:0,descripcion: 'noData', cveSeminario:'noData',activo:false,fechaCreacion:"",anio:0,folio:0,version:0,fechaInicio:'noData',fechaFinal:'noData',idTipoEvento:{id:0,descripcion:'noData'},acciones:'noData',accion:"noData"}];
@@ -51,30 +57,15 @@ getSeminarios():void{
   }
 
   activeInactive(idEvento:number,checked:boolean){
-      
-    let filtro:any=this.ELEMENT_DATA.filter((result: { id: number; })=>result.id==idEvento);
-
-    
-    let dataSeminario={
-      id:filtro[0].id,
-        descripcion: filtro[0].descripcion,
-        cveSeminario: filtro[0].cveSeminario,
-        activo:filtro[0].activo,
-        fechaCreacion:filtro[0].fechaCreacion,
-        anio:filtro[0].anio,
-        folio:filtro[0].folio,
-        version:filtro[0].version,
-        fechaInicio:filtro[0].fechaInicio,
-        fechaFinal:filtro[0].fechaFinal,
-        idTipoEvento:{id:filtro[0].idTipoEvento.id,descripcion:filtro[0].idTipoEvento.descripcion},
-    }
+    const datepipe: DatePipe = new DatePipe('en-US')
+    let filtro:any=this.seminarios.filter((result: { id: number; })=>result.id==idEvento);
     delete filtro[0].links
     delete filtro[0].idTipoEvento.links
-    filtro[0].fechaCreacion="2021-05-03 00:00";
-    console.log(filtro)
-    
+    let fecha=new Date(filtro[0].fechaCreacion).toISOString().substr(0, 19);
+    console.log(fecha)
+    filtro[0].fechaCreacion=datepipe.transform(filtro[0].fechaCreacion, 'yyyy-MM-dd hh:mm:ss')?.substring(0,16);
+    console.log(filtro[0].fechaCreacion)
    if (!checked) {
-      
       this.seminarioService.updateSeminario(idEvento,filtro[0]).subscribe(result=>{
         this.getSeminarios();
       },error=>{

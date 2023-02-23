@@ -35,8 +35,8 @@
             <td > {{item.anio}} </td>
             <td > {{item.folio}} </td>
             <td > {{item.idTipoEvento.id}} </td>
-            <td > {{item.fechaInicio}} </td>
-            <td > {{item.fechaFinal}} </td>
+            <td > {{item.fechaInicio| date : "yyyy-MM-dd" }} </td>
+            <td > {{item.fechaFinal| date : "yyyy-MM-dd" }} </td>
             <td><img src="../../../../../assets/icono-editar.png" matTooltip="Editar" class="iconAcciones" (click)="editarSeminario(item.id,item.descripcion)">
               <img src="../../../../../assets/icono-carga.png" matTooltip="Agregar Formulario" class="iconAcciones" (click)="agregarFormulario(item.id)">
             </td>
@@ -45,7 +45,7 @@
           </tr>
         </div>
       </table>
-    <mat-paginator [length]="ELEMENT_DATA.length" [pageSize]="pageSize" (page)="cambiarpagina($event)">
+    <mat-paginator [length]="totalSeminarios" [pageSize]="pageSize" (page)="cambiarpagina($event)">
     </mat-paginator> 
   </div>
 
