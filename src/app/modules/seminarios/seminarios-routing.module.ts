@@ -12,7 +12,7 @@ export const ROUTES:Routes=[
         component:componentsSeminarios.SeminariosComponent,
     },
     {
-        path:'documentos-formulario-seminario',
+        path:'documentos-formulario-seminario/:id',
         component:componentsSeminarios.DocumentosFormularioSeminarioComponent,
     },
     {
@@ -23,6 +23,11 @@ export const ROUTES:Routes=[
     {
         path:'seminarios/addSeminario',
         component:componentsSeminarios.AgregarSeminarioComponent,
+    }
+    ,
+    {
+        path:'formuariosSeminario/addFormulario',
+        component:componentsSeminarios.AgregarFormularioComponent,
     }
 ];
 

@@ -1,7 +1,7 @@
 <div class="content">
  
   <div class="sideNave">
-    <a href="http://localhost:4200/concursoestudiantes/home" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+    <a routerLink="/concursoestudiantes/home" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
     <div style="box-shadow: 0 0 10px #9E1B31; border-radius:10px 40px; width: 15%;padding: 10px; float: right;background-color: #9E1B31;margin-right: 20px;margin-top:5px;text-align: center;color: #fff;">
       EVENTOS
     </div>
@@ -34,13 +34,13 @@
             <td > {{item.descripcion}} </td>
             <td > {{item.anio}} </td>
             <td > {{item.folio}} </td>
-            <td > {{item.tipoEvento}} </td>
+            <td > {{item.idTipoEvento.id}} </td>
             <td > {{item.fechaInicio}} </td>
             <td > {{item.fechaFinal}} </td>
             <td><img src="../../../../../assets/icono-editar.png" matTooltip="Editar" class="iconAcciones" (click)="editarSeminario(item.id,item.descripcion)">
               <img src="../../../../../assets/icono-carga.png" matTooltip="Agregar Formulario" class="iconAcciones" (click)="agregarFormulario(item.id)">
             </td>
-            <td > <mat-checkbox checked="item.Activo"></mat-checkbox></td>
+            <td > <mat-checkbox [(ngModel)]="item.activo" (click)="activeInactive(item.id,item.activo)"></mat-checkbox></td>
 
           </tr>
         </div>

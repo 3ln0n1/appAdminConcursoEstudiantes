@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {MatPaginator, PageEvent} from '@angular/material/paginator';
 import {MatTableDataSource} from '@angular/material/table';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Formulario, Resultado } from '../../models/seminarioDTO';
 import { SeminarioService } from '../../services/seminario.service';
 
@@ -15,20 +16,27 @@ export class DocumentosFormularioSeminarioComponent implements OnInit {
   i:number = 1;
   desde:number =0;
   hasta:number =1;
+  idSeminario!:number;
   
   
 
 
 
-constructor(private seminarioService:SeminarioService){}
+constructor(private seminarioService:SeminarioService, private activeRouter:ActivatedRoute,private router:Router){}
 
 ngOnInit(): void {
-  this.seminarioService.getFormulariosByIdSeminario("1").subscribe(result=>{
+  this.idSeminario=parseInt(""+this.activeRouter.snapshot.paramMap.get('id'));
+  console.log("ID"+this.idSeminario)
+  this.seminarioService.getFormulariosByIdSeminario(this.idSeminario).subscribe(result=>{
     this.ELEMENT_DATA=result.resultados
-console.log(this.ELEMENT_DATA)
+    console.log(result.resultados)
   });
+  
 }
 
+addFormulario():void{
+this.router.navigate(['concursoestudiantes/formuariosSeminario/addFormulario']);
+}
 
 
 

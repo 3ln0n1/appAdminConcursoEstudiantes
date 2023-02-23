@@ -20,7 +20,7 @@ export class SeminarioService {
     }));
   }
 
-  getSeminario(id:string): Observable<any> {
+  getSeminarioByidSeminario(id:string): Observable<any> {
     let url = environment.apiURL+environment.URL_SEMINARIO+"/"+id;
     return this.http.get(url).pipe(map(json => {
     const result = json;
@@ -28,11 +28,16 @@ export class SeminarioService {
     }));
   }
 
-  getFormulariosByIdSeminario(id:string): Observable<Formulario> {
-    let url = environment.apiURL+environment.URL_FORMULARIOS_BY_IDSEMINARIO//environment.URL_SEMINARIO+"/"+id;
+  getFormulariosByIdSeminario(id:number): Observable<Formulario> {
+    let url = environment.apiURL+environment.URL_FORMULARIOS_BY_IDSEMINARIO+id;
     return this.http.get(url).pipe(map(json => {
     const result = json;
     return result as Formulario;
     }));
   }
+
+  updateSeminario(id:number,descripcion:any):Observable<any> {
+    let url = environment.apiURL+environment.URL_SEMINARIO+"/"+id;
+     return this.http.put(url, descripcion);
+    }
 }

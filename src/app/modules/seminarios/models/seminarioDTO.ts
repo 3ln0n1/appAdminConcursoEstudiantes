@@ -1,42 +1,28 @@
-export interface Seminario {
-    id:number; 
-    cveSeminario:string;
-    descripcion:string;
-    anio:string;
-    folio:string;
-    tipoEvento:string;
-    fechaInicio:string;
-    fechaFinal:string;
-    acciones:string;
-    activoInactivo:string;
-    accion:string;
-  
-  }
-
-
-  
-
-
-
-    export interface Link {
-        rel: string;
-        href: string;
+    export interface Seminario {
+        id: number;
+        descripcion: string;
+        cveSeminario: string;
+        activo: boolean;
+        fechaCreacion: string;
+        anio: number;
+        folio: number;
+        version: number;
+        fechaInicio: string;
+        fechaFinal: string;
+        idTipoEvento: IdTipoEvento;
+        //propiedades genericas
+        acciones:string,
+        accion:string;
     }
 
-    export interface Link2 {
-        rel: string;
-        href: string;
-    }
 
     export interface IdTipoEvento {
         id: number;
-        links: any[];
         descripcion: string;
     }
 
     export interface IdSeminario {
         id: number;
-        links: any[];
         descripcion: string;
         cveSeminario: string;
         activo: boolean;
@@ -51,7 +37,6 @@ export interface Seminario {
 
     export interface Resultado {
         id: number;
-        links: Link2[];
         titulo: string;
         descripcion: string;
         fecha: string;
@@ -66,8 +51,6 @@ export interface Seminario {
     }
 
     export interface Formulario {
-        size: number;
-        link: Link;
         resultados: Resultado[];
     }
 

@@ -1,6 +1,6 @@
 <div class="content">
   <div class="sideNave">
-    <a href="http://localhost:4200/concursoestudiantes/seminarios" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+    <a routerLink="/concursoestudiantes/seminarios" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
     <div style="box-shadow: 0 0 10px #9E1B31; border-radius:10px 40px; width: 15%;padding: 10px; float: right;background-color: #9E1B31;margin-right: 20px;margin-top:5px;text-align: center;color: #fff;">
       EVENTOS
     </div>
@@ -11,15 +11,15 @@
       <span>Clave Seminario:</span>
       <span>Descripcion:</span>
     </div>
-    <div class="columDiv">
-      <span>1</span>
-      <span>SEI</span>
-      <span>Seminario Autoria</span>
+    <div class="columDiv" *ngFor="let seminario of ELEMENT_DATA">
+      <span>{{idSeminario}}</span>
+      <span>{{seminario.idSeminario.cveSeminario}}</span>
+      <span>{{seminario.idSeminario.descripcion}}</span>
     </div>
   </div>
 
     <div class="button">
-        <button type="button" mat-button>Agregar Formulario</button>
+        <button type="button" mat-button (click)="addFormulario()">Agregar Formulario</button>
       </div>
 
       <div class="divTable" >

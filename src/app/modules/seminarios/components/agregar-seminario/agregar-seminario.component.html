@@ -1,6 +1,6 @@
 <div class="content">
     <div class="sideNave">
-        <a href="http://localhost:4200/concursoestudiantes/seminarios" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
+        <a routerLink="/concursoestudiantes/seminarios" class="redirecBack"><img src="../../../../../assets/back.png" alt=""></a>
     </div>
     <div class="form">
         <div class="headForm">{{titulo}}</div>
@@ -21,11 +21,11 @@
             </select>
     </div>
         <div class="divRow"><label for="">Fecha Inicio*</label>
-            <input/>
+            <input matInput [(ngModel)]="datosSeminario.fechaInicio"/>
         </div>
 
         <div class="divRow"><label for="">Fecha Fnal*</label>
-            <input/>
+            <input matInput [(ngModel)]="datosSeminario.fechaFinal"/>
         </div>
        
         <div class="divRow">
@@ -33,7 +33,7 @@
                 <button type="button" mat-button  >Regresar</button>
             </div>
             <div class="buttonGuardar">
-                <button type="button" mat-button  >Guardar</button>
+                <button type="button" mat-button  (click)="editarSeminario()">Guardar</button>
             </div>
         </div>
 
